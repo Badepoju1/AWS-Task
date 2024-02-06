@@ -1,5 +1,14 @@
 # AWS-Task
+
 For My AWS Projects Documentation
 
-## Task : AWS IAM Configuration Task
-# Objective: Your task is to configure AWS IAM (Identity and Access Management) to establish secure access protocols for different departments within our organization, ensuring appropriate access levels are granted according to departmental functions and responsibilities.
+#AWS IAM Configuration Documentation
+
+Introduction
+
+This document outlines the steps taken to configure AWS Identity and Access Management (IAM) for different departmental groups within our organization, ensuring appropriate access levels as per their operational needs.
+Objective
+
+To establish secure and role-based access to AWS services for the DevOps, Development, Sales/Marketing, and Finance/Accounting departments.
+IAM Configuration Details
+
