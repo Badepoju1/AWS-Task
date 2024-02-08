@@ -19,18 +19,17 @@ to configure AWS IAM (Identity and Access Management) to establish secure access
  
        - Group Name: DevOps
        - Users Added:
-            User1
-            User2
+            DevOps_User1
+            DevOps_User2
        - Access Level: Administrator Access
-       - Policy Attached: AdministratorAccess
+       - Policy Attached: AdministratorAccess permission
        - Justification: Requires full access to manage and configure all AWS services.
 
  ## Steps Taken:
 
            1. Created a group in IAM named DevOps_Group.
            2. Assigned the AdministratorAccess policy to the DevOps_Group, granting administrative access.
-           3. Created two IAM user accounts (User1 and User2).
-           4. Added User1 and User2 to the DevOps_Group to enable them to perform administrative tasks.
+           3. Created 2 IAM user accounts (DevOps_User1 and DevOps_User2), then added users to the DevOps_Group to enable them to perform administrative tasks.
 
 ## Task 2 Development Group Configuration
          
@@ -38,20 +37,59 @@ to configure AWS IAM (Identity and Access Management) to establish secure access
  
        - Group Name: Development
        - Users Added:
-            User1
-            User2
-            User3
-            User4
-       - Access Level: Full access to Amazon S3 and DynamoDB, along with the ability to start EC2 instances without the permission to stop them.
-       - Policy Attached: Custom policies granting access to S3, DynamoDB, and limited access to EC2 services.
+            Dev_User1
+            Dev_User2
+            Dev_User3
+            Dev_User4
+       - Access Level: Full access to Amazon S3 and DynamoDB services, along with the ability to start EC2 instances without the permission to stop them.
+       - Policy Attached: AmazonS3FullAccess, AmazonDynamoDBFullAccess and EC2StartOnlyPolicy permission.
        - Justification: Requires access to work with S3 and DynamoDB for development purposes, as well as the ability to start EC2 instances for testing.
 
  ## Steps Taken:
 
            1. Created a group in IAM named Development_Group.
            2. Created policy called EC2StartOnlyPolicy (which allows user to only start EC2 instances)
-           3. Assigned the AmazonS3FullAccess, AmazonDynamoDBFullAccess and EC2StartOnlyPolicy
-           4. Created two IAM user accounts (User1, User2, User3 and User4), then added the user to the Development_Group to enable them have access to the services. 
+           3. Assigned the AmazonS3FullAccess, AmazonDynamoDBFullAccess and EC2StartOnlyPolicy permission.
+           4. Created 4 IAM user accounts (Dev_User1, Dev_User2, Dev_User3 and Dev_User4), then added the users to the Development_Group to enable them have access to the services. 
           
            
 
+## Task 3 Sales-marketing Group Configuration
+         
+        **Group Details
+ 
+       - Group Name: Sales-marketing
+       - Users Added:
+            Sale_User1
+            Sale_User2
+            Mar_User1
+            
+       - Access Level: Read-only access to the S3 services.
+       - Policy Attached: AmazonS3ReadOnlyAccess 
+       - Justification: Requires access to read documents and files stored on the S3 services
+
+ ## Steps Taken:
+
+           1. Created a group in IAM named Sales-marketing_Group.
+           2. Assigned the AmazonS3ReadOnlyAccess permission
+           3. Created 3 IAM user accounts (Sale_User1, Sale_User2 and Mar_User1), then added the users to the Sales-marketing to enable them have access to the services. 
+
+
+## Task 4 Finance-Accounting Group Configuration
+         
+        **Group Details
+ 
+       - Group Name: Finance-Accounting
+       - Users Added:
+            Fin_User1
+                        
+       - Access Level: Access to view account activity and usage reports.
+       - Policy Attached: AWSAccountUsageReportAccess permissions 
+       - Justification: Requires access to read documents and files stored on the S3 services
+
+ ## Steps Taken:
+
+           1. Created a group in IAM named Finance-Accounting_Group.
+           2. Assigned the AmazonS3ReadOnlyAccess permission
+           4. Created 1 IAM user accounts (Fin_User1), then added the users to the Finance-Accounting to enable them have access to the services. 
+          
