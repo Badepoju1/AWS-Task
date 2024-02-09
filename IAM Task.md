@@ -90,6 +90,15 @@ to configure AWS IAM (Identity and Access Management) to establish secure access
  ## Steps Taken:
 
            1. Created a group in IAM named Finance-Accounting_Group.
-           2. Assigned the AmazonS3ReadOnlyAccess permission
-           4. Created 1 IAM user accounts (Fin_User1), then added the users to the Finance-Accounting to enable them have access to the services. 
-          
+           2. Assigned the AWSAccountUsageReportAccess permission
+           3. Created 1 IAM user accounts (Fin_User1), then added the users to the Finance-Accounting to enable them have access to the services. 
+  
+##  Challenges and Solutions
+
+    Challenge 1: Custom permissions for starting EC2 instances without the ability to stop them are not included in the AWS Policy list.
+        Solution: Created an IAM policy named 'EC2StartOnlyPolicy' to allow users to launch EC2 instances without the ability to stop them.
+
+##  Conclusion
+
+     The IAM configuration adheres to the principle of least privilege, granting departmental users access solely to services essential for their respective roles. 
+     This approach bolsters security and operational efficiency, clearly delineating access boundaries within our AWS environment.      
